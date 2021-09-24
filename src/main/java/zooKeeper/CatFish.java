@@ -54,7 +54,7 @@ public class CatFish extends Fish implements Swim {
         if (this.speed < 100) {
             this.speed = this.speed + 25;
         } else {
-            this.speed = this.speed = 100;
+            this.speed = 100;
         }
         speedCheck();
     }
@@ -66,7 +66,7 @@ public class CatFish extends Fish implements Swim {
         if (this.speed >= 25) {
             this.speed = this.speed - 25;
         } else {
-            this.speed = this.speed = 25;
+            this.speed = 25;
         }
         speedCheck();
     }

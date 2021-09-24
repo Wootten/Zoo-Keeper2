@@ -119,7 +119,7 @@ public class Cat extends Mammal implements Swim {
         if (this.speed < 70) {
             this.speed = this.speed + 10;
         } else {
-            this.speed = this.speed = 70;
+            this.speed = 70;
         }
         speedCheck();
     }
@@ -131,7 +131,7 @@ public class Cat extends Mammal implements Swim {
         if (this.speed > 30) {
             this.speed = this.speed - 10;
         } else {
-            this.speed = this.speed = 30;
+            this.speed = 30;
         }
         speedCheck();
     }
