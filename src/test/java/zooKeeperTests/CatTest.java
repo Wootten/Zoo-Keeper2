@@ -160,7 +160,6 @@ public class CatTest {
         assertEquals(70, testCat.getSpeed(), "Speed incorrect");
     }
 
-
     @Test
     @DisplayName("Checks the cat doesn't get slower than its boundary value when slowing down in water")
     public void catSlowDown() {
