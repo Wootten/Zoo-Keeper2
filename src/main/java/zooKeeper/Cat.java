@@ -1,17 +1,16 @@
 package zooKeeper;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-//import java.time.temporal.ChronoUnit;
 
 public class Cat extends Mammal implements Swim {
 
-    //////////Attributes//////////
+
     private double weight;
     private String breed;
     private LocalDate dateOfBirth;
     private int speed;
 
-    //////////Constructors////////
+
     public Cat(double weight, String breed, LocalDate dateOfBirth, int speed){
         this.weight = weight;
         this.breed = breed;
@@ -61,7 +60,7 @@ public class Cat extends Mammal implements Swim {
         this.speed  = 50;
     }
 
-    //////////Methods/////////////
+
     public double getWeight() {
         return weight;
     }
