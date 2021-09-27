@@ -14,6 +14,7 @@ public class Pigeon extends Bird {
     }
 
     //////////Methods/////////////
+    //This is a comment
     public int getEnergy() {
         return energy;
     }
