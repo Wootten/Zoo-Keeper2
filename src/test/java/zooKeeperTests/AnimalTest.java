@@ -19,7 +19,7 @@ public class AnimalTest {
     @DisplayName("Tests die method")
     public void dieTest () {
         Animal testAnimal = new Cat();
-        assertEquals("RIP", testAnimal.die(), "Incorrect return");
+        assertEquals("RIP - I am dead", testAnimal.die(), "Incorrect return");
     }
 
 }

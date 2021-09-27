@@ -20,7 +20,7 @@ public abstract class Animal {
     }
 
     public String die() {
-        return "RIP";
+        return "RIP - I am dead";
     }
 
 }
