@@ -13,7 +13,7 @@ public class Pigeon extends Bird {
         this.energy = 75;
     }
 
-    //////////Methods/////////////
+    //////////Methods//////////////
     public int getEnergy() {
         return energy;
     }
