@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CatFish.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">zooKeeper</a> &gt; <a href="index.source.html" class="el_package">zooKeeper</a> &gt; <span class="el_source">CatFish.java</span></div><h1>CatFish.java</h1><pre class="source lang-java linenums">package zooKeeper;
+
+public class CatFish extends Fish implements Swim {
+
+    //////////Attributes//////////
+    private int hunger;
+    private int speed;
+
+
+    //////////Constructors////////
+
+<span class="nc" id="L12">    public CatFish(int hunger, int speed) {</span>
+<span class="nc" id="L13">        this.hunger = hunger;</span>
+<span class="nc" id="L14">        this.speed = speed;</span>
+<span class="nc" id="L15">    }</span>
+
+<span class="nc" id="L17">    public CatFish(int hunger) {</span>
+<span class="nc" id="L18">        this.hunger = hunger;</span>
+<span class="nc" id="L19">        this.speed = 50;</span>
+<span class="nc" id="L20">    }</span>
+
+<span class="nc" id="L22">    public CatFish() {</span>
+<span class="nc" id="L23">        this.hunger = 30;</span>
+<span class="nc" id="L24">        this.speed = 50;</span>
+<span class="nc" id="L25">    }</span>
+
+    //////////Methods/////////////
+    public int getHunger() {
+<span class="nc" id="L29">        return hunger;</span>
+    }
+
+    public void setHunger(int hunger) {
+<span class="nc" id="L33">        this.hunger = hunger;</span>
+<span class="nc" id="L34">    }</span>
+
+    public int getSpeed() {
+<span class="nc" id="L37">        return speed;</span>
+    }
+
+    public void setSpeed(int speed) {
+<span class="nc" id="L41">        this.speed = speed;</span>
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    public String eat() {
+<span class="nc" id="L46">        this.hunger = this.hunger - 20;</span>
+<span class="nc" id="L47">        return &quot;I eat other fish because i'm a cannibal&quot;;</span>
+    }
+
+    @Override
+    public void gainSpeedInWater() {
+<span class="nc" id="L52">        speedCheck();</span>
+<span class="nc" id="L53">        System.out.println(&quot;I am swimming faster&quot;);</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (this.speed &lt; 100) {</span>
+<span class="nc" id="L55">            this.speed = this.speed + 25;</span>
+        } else {
+<span class="nc" id="L57">            this.speed = 100;</span>
+        }
+<span class="nc" id="L59">        speedCheck();</span>
+<span class="nc" id="L60">    }</span>
+
+    @Override
+    public void slowDownInWater() {
+<span class="nc" id="L64">        speedCheck();</span>
+<span class="nc" id="L65">        System.out.println(&quot;I am swimming slower&quot;);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (this.speed &gt;= 25) {</span>
+<span class="nc" id="L67">            this.speed = this.speed - 25;</span>
+        } else {
+<span class="nc" id="L69">            this.speed = 25;</span>
+        }
+<span class="nc" id="L71">        speedCheck();</span>
+<span class="nc" id="L72">    }</span>
+
+    @Override
+    public void speedCheck() {
+<span class="nc" id="L76">        int currentSpeed = getSpeed();</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (currentSpeed &gt; 100) {</span>
+<span class="nc" id="L78">            this.speed = 100;</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        } else if (currentSpeed &lt; 25) {</span>
+<span class="nc" id="L80">            this.speed = 25;</span>
+        }
+<span class="nc" id="L82">    }</span>
+
+    @Override
+    public void huntInWater() {
+<span class="nc" id="L86">        gainSpeedInWater();</span>
+<span class="nc" id="L87">        System.out.println(&quot;I have caught my prey!&quot;);</span>
+<span class="nc" id="L88">        eat();</span>
+<span class="nc" id="L89">        slowDownInWater();</span>
+<span class="nc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
