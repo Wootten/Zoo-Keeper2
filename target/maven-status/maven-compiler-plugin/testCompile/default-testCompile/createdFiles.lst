@@ -1,10 +1,11 @@
 zooKeeperTests\MammalTest.class
 zooKeeperTests\FishTest.class
 zooKeeperTests\PigeonTest.class
+hellocucumber\StepDefinitions.class
+hellocucumber\TestMethods.class
 zooKeeperTests\BirdTest.class
 zooKeeperTests\AnimalTest.class
-TestMethods.class
 zooKeeperTests\BatTest.class
-StepDefinitions.class
+runner\RunnerTest.class
 zooKeeperTests\CatFishTest.class
 zooKeeperTests\CatTest.class
