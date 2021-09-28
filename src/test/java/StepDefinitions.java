@@ -1,4 +1,3 @@
-package cucumberTests;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,6 +33,30 @@ class TestMethods {
             eat = "Not Eat";
         }
         return eat;
+    }
+
+    static String canPigeonEat(int pigeonEnergy) {
+        String pigeonEat = "";
+        if (pigeonEnergy == 100) {
+            pigeonEat = "I'm full of energy";
+        } else if (pigeonEnergy == 30) {
+            pigeonEat = "Eat";
+        }
+        return pigeonEat;
+    }
+
+    static int foodTypeEnergy(String foodType, String pigeonEatOutput) {
+        int energyOutput = 0;
+        if (pigeonEatOutput.equals("Eat")) {
+            if (foodType.equals("worms")) {
+                energyOutput = 40;
+            } else if (foodType.equals("seeds")) {
+                energyOutput = 35;
+            }
+        } else {
+            energyOutput = 0;
+        }
+        return energyOutput;
     }
 }
 
@@ -109,6 +132,32 @@ public class StepDefinitions {
     @Then("I will {string}")
     public void iWillEat(String expectedResult) {
         assertEquals(expectedResult, actualResult);
+    }
+
+    //Pigeon eats for energy
+    private int pigeonEnergy;
+    private int energyIncrement;
+    private String pigeonEatOutput;
+
+    @Given("Pigeon energy is {int}")
+    public void pigeonEnergyIs(int energyLevel) {
+        pigeonEnergy = energyLevel;
+    }
+
+    @When("I ask to eat {string}")
+    public void iAskToEat(String foodType) {
+        pigeonEatOutput = TestMethods.canPigeonEat(pigeonEnergy);
+        energyIncrement = TestMethods.foodTypeEnergy(foodType, pigeonEatOutput);
+    }
+
+    @Then("I cant {string}")
+    public void iCant(String imFull) {
+        assertEquals(imFull, pigeonEatOutput);
+    }
+
+    @Then("I eat and energy equals {int}")
+    public void iEatAndEnergyEquals(int totalEnergy) {
+        assertEquals(totalEnergy, energyIncrement);
     }
 
 }

@@ -3,6 +3,8 @@ zooKeeperTests\FishTest.class
 zooKeeperTests\PigeonTest.class
 zooKeeperTests\BirdTest.class
 zooKeeperTests\AnimalTest.class
+TestMethods.class
 zooKeeperTests\BatTest.class
+StepDefinitions.class
 zooKeeperTests\CatFishTest.class
 zooKeeperTests\CatTest.class
