@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: runner.RunnerTest
+Test set: zooKeeperTests.CatTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.234 s - in runner.RunnerTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in zooKeeperTests.CatTest

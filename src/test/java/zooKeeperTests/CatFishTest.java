@@ -2,8 +2,6 @@ package zooKeeperTests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import zooKeeper.Bat;
-import zooKeeper.Cat;
 import zooKeeper.CatFish;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

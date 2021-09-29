@@ -2,10 +2,7 @@ package zooKeeperTests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import zooKeeper.Cat;
 import zooKeeper.Pigeon;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
