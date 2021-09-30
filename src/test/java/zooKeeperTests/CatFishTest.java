@@ -6,12 +6,12 @@ import zooKeeper.CatFish;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CatFishTest {
+class CatFishTest {
 
     ////////// CatFish Tests //////////
     @Test
     @DisplayName("Tests hunger getter and setter methods")
-    public void hungerGetterSetterTest() {
+    void hungerGetterSetterTest() {
         CatFish testCatFish = new CatFish(40, 50);
         testCatFish.setHunger(60);
         assertEquals(60, testCatFish.getHunger(), "Returned incorrect hunger");
@@ -19,7 +19,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Tests speed getter and setter methods")
-    public void speedGetterSetterTest() {
+    void speedGetterSetterTest() {
         CatFish testCatFish = new CatFish(40, 50);
         testCatFish.setSpeed(60);
         assertEquals(60, testCatFish.getSpeed(), "Returned incorrect speed");
@@ -27,7 +27,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Tests CatFish Constructor with no parameters")
-    public void noParameterConstructorTest () {
+    void noParameterConstructorTest () {
         CatFish testCatFish = new CatFish();
         assertEquals(30, testCatFish.getHunger(), "Returned wrong weight");
         assertEquals(50, testCatFish.getSpeed(),"Returned wrong speed");
@@ -35,7 +35,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Tests CatFish Constructor with only hunger parameter")
-    public void hungerParameterConstructorTest () {
+    void hungerParameterConstructorTest () {
         CatFish testCatFish = new CatFish(40);
         assertEquals(40, testCatFish.getHunger(), "Returned wrong weight");
         assertEquals(50, testCatFish.getSpeed(),"Returned wrong speed");
@@ -43,7 +43,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Tests CatFish Constructor with hunger and speed parameters")
-    public void hungerSpeedParameterConstructorTest () {
+    void hungerSpeedParameterConstructorTest () {
         CatFish testCatFish = new CatFish(40, 60);
         assertEquals(40, testCatFish.getHunger(), "Returned wrong weight");
         assertEquals(60, testCatFish.getSpeed(),"Returned wrong speed");
@@ -51,7 +51,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Checks to see if the catfish's hunger level drops when it eats")
-    public void catFishHungerTest() {
+    void catFishHungerTest() {
         CatFish testCatFish = new CatFish(100, 50);
         testCatFish.eat();
         assertEquals(80, testCatFish.getHunger(), "Hunger level incorrect");
@@ -59,7 +59,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure a catfish doesn't exceed its speed limit when speeding up")
-    public void catFishGainSpeed() {
+    void catFishGainSpeed() {
         CatFish testCatFish = new CatFish(100, 90);
         testCatFish.gainSpeedInWater();
         assertEquals(100, testCatFish.getSpeed(), "Speed incorrect");
@@ -67,7 +67,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure a catfish can speed up within its speed boundaries")
-    public void catFishGainSpeed2() {
+    void catFishGainSpeed2() {
         CatFish testCatFish = new CatFish(100, 40);
         testCatFish.gainSpeedInWater();
         assertEquals(65, testCatFish.getSpeed(), "Speed incorrect");
@@ -75,7 +75,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure a catfish's speed will not exceed limit when speeding up despite high original value")
-    public void catFishGainSpeed3() {
+    void catFishGainSpeed3() {
         CatFish testCatFish = new CatFish(100, 5000);
         testCatFish.gainSpeedInWater();
         assertEquals(100, testCatFish.getSpeed(), "Speed incorrect");
