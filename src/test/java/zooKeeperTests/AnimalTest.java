@@ -6,18 +6,18 @@ import zooKeeper.Animal;
 import zooKeeper.Cat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AnimalTest {
+class AnimalTest {
 
     @Test
     @DisplayName("Tests sleep method")
-    public void sleepTest () {
+    void sleepTest () {
         Animal testAnimal = new Cat();
         assertEquals("ZZZ zzz ZZZ zzz", testAnimal.sleep(), "Incorrect return");
     }
 
     @Test
     @DisplayName("Tests die method")
-    public void dieTest () {
+    void dieTest () {
         Animal testAnimal = new Cat();
         assertEquals("RIP - I am dead", testAnimal.die(), "Incorrect return");
     }

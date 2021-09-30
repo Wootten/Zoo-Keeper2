@@ -83,7 +83,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure catfish doesn't get too slow when slowing down")
-    public void catFishSlowDown() {
+    void catFishSlowDown() {
         CatFish testCatFish = new CatFish(100, 30);
         testCatFish.slowDownInWater();
         assertEquals(25, testCatFish.getSpeed(), "Speed incorrect");
@@ -91,7 +91,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure catfish can slow down within its speed boundaries")
-    public void catFishSlowDown2() {
+    void catFishSlowDown2() {
         CatFish testCatFish = new CatFish(100, 60);
         testCatFish.slowDownInWater();
         assertEquals(35, testCatFish.getSpeed(), "Speed incorrect");
@@ -99,7 +99,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Makes sure catfish can slow down correctly despite high constructor speed value")
-    public void catFishSlowDown3() {
+    void catFishSlowDown3() {
         CatFish testCatFish = new CatFish(100, 5000);
         testCatFish.slowDownInWater();
         assertEquals(75, testCatFish.getSpeed(), "Speed incorrect");
@@ -107,7 +107,7 @@ public class CatFishTest {
 
     @Test
     @DisplayName("Checks catfish attributes are correctly changed when it hunts")
-    public void catFishHunts() {
+    void catFishHunts() {
         CatFish testCatFish = new CatFish(100, 50);
         testCatFish.huntInWater();
         assertEquals(80, testCatFish.getHunger(),"Incorrect Hunger level");
