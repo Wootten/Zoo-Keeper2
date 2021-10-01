@@ -16,9 +16,20 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
     @CrossOrigin("http://localhost:3000")
-    @GetMapping("/customRoute")
+    @GetMapping("/zooCreation")
     public String myZoo() {
         Zoo zooAnimals = new Zoo();
         return zooAnimals.toString();
+    }
+
+    @CrossOrigin("http://localhost:3000")
+    @GetMapping("/catFishSpeed")
+    public String ZooTwo() {
+        CatFish catFish = new CatFish(75, 70);
+        int originalSpeed = catFish.getSpeed();
+        catFish.gainSpeedInWater();
+        int newSpeed = catFish.getSpeed();
+
+        return "Original Speed: " + originalSpeed + " New Speed: " + newSpeed;
     }
 }
