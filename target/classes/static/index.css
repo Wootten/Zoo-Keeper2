@@ -10,11 +10,12 @@ h1 {
 
 p {
   font-family: verdana;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 form {
   text-align: center;
+  margin-bottom: 5%;
 }
 
 #animalForm {
@@ -25,3 +26,21 @@ form {
   font-size: 20px;
 }
 
+#catTestingForm {
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+
+}
+
+input {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

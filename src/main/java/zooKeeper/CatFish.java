@@ -88,4 +88,12 @@ public class CatFish extends Fish implements Swim {
         eat();
         slowDownInWater();
     }
+
+    /*@Override
+    public String toString() {
+        return "{" +
+                "\"hunger\"= \"" + hunger +
+                "\", \"speed\"=\"" + speed +
+                "\"}";
+    }*/
 }
