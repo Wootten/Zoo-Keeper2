@@ -6,12 +6,11 @@
     <title>My Zoo</title>
 </head>
 <body>
-<h1><a href="zooCreation">Zoo Test Page</a></h1>
+<h1><a href="zooCreation">Zoo Creation</a></h1>
 <form action = "/zooCreation" method="GET" id="anyname">
     <div id="animalForm">
-        <label for="nameField">Name an animal</label>
-        <input name="myAnimal" id="nameField">
-        <button>Add</button>
+        <p> Click below to create a Zoo</p>
+        <button>CREATE THE ZOO!</button>
     </div>
 
 </form>
@@ -23,11 +22,39 @@
 
 </form>
 
-</form>
 <h1><a href="catTesting">Cat Tests</a></h1>
 <form action = "/catTesting" method="GET" id="methodThree">
     <div id="catTestingForm">
-        <button>Reveal Cat DoB</button>
+        <button>Cat Stuff</button>
+    </div>
+
+</form>
+
+<h1><a>Zoo Selection</a></h1>
+<form method="GET" id="methodFour">
+    <div id="zooSelectionForm">
+        <p>Display the JSON data about each animal in the Zoo</p>
+        <button type='submit' formaction='/catSelect'>Cat</button>
+        <button type='submit' formaction='/catFishSelect'>CatFish</button>
+        <button type='submit' formaction='/batSelect'>Bat</button>
+        <button type='submit' formaction='/pigeonSelect'>Pigeon</button>
+    </div>
+
+</form>
+
+<h1><a href="addCat">Add a new Cat</a></h1>
+<form action = "/addCat" method="POST" id="methodFive">
+    <div id="catAdderForm">
+        <p>Add a new Animal to the Zoo</p>
+        <label for="weight">Weight of cat</label>
+        <input name="weight" id="weight">
+        <label for="breed">Breed of cat</label>
+        <input name="breed" id="breed">
+        <label for="yob">Cat's year of birth</label>
+        <input name="yob" id="yob">
+        <label for="speed">Cat speed</label>
+        <input name="speed" id="speed">
+        <button>Add Cat</button>
     </div>
 
 </form>

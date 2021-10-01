@@ -82,11 +82,11 @@ public class CatFish extends Fish implements Swim {
     }
 
     @Override
-    public void huntInWater() {
+    public String huntInWater() {
         gainSpeedInWater();
-        System.out.println("I have caught my prey!");
         eat();
         slowDownInWater();
+        return "I have caught my prey!";
     }
 
     /*@Override

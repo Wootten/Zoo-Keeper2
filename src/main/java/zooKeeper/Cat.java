@@ -125,11 +125,11 @@ public class Cat extends Mammal implements Swim {
     }
 
     @Override
-    public void huntInWater() {
+    public String huntInWater() {
         this.gainSpeedInWater();
-        System.out.println("I have caught my prey!");
         this.eat();
         this.slowDownInWater();
+        return "I have caught my prey!";
     }
 
     @Override
