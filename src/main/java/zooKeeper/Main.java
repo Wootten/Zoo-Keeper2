@@ -2,7 +2,6 @@ package zooKeeper;
 
 import com.google.gson.Gson;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +12,10 @@ import java.util.List;
 //import org.springframework.web.bind.annotation.RequestParam;
 
 
-@SpringBootApplication
+@org.springframework.boot.autoconfigure.SpringBootApplication
 @RestController
 public class Main {
+    Zoo zooAnimals = new Zoo();
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
@@ -23,7 +23,6 @@ public class Main {
     @CrossOrigin("http://localhost:3000")
     @GetMapping("/zooCreation")
     public String myZoo() {
-        Zoo zooAnimals = new Zoo();
         return zooAnimals.toString();
     }
 
@@ -52,7 +51,6 @@ public class Main {
     @CrossOrigin("http://localhost:3000")
     @GetMapping("/catSelect")
     public String catSelect() {
-        Zoo zooAnimals = new Zoo();
         List<Animal> animals = zooAnimals.getZooAnimals();
         Animal selectedAnimal;
         selectedAnimal = animals.get(0);
@@ -74,7 +72,6 @@ public class Main {
     @CrossOrigin("http://localhost:3000")
     @GetMapping("/batSelect")
     public String batSelect() {
-        Zoo zooAnimals = new Zoo();
         List<Animal> animals = zooAnimals.getZooAnimals();
         Animal selectedAnimal;
         selectedAnimal = animals.get(2);
@@ -83,9 +80,8 @@ public class Main {
     }
 
     @CrossOrigin("http://localhost:3000")
-    @GetMapping("pigeonSelect")
+    @GetMapping("/pigeonSelect")
     public String pigeonSelect() {
-        Zoo zooAnimals = new Zoo();
         List<Animal> animals = zooAnimals.getZooAnimals();
         Animal selectedAnimal;
         selectedAnimal = animals.get(3);
@@ -96,7 +92,6 @@ public class Main {
     @CrossOrigin("http://localhost:3000")
     @PostMapping("/addCat")
     public String addCat(String weight, String breed, String yob, String speed) {
-        Zoo zooAnimals = new Zoo();
         List<Animal> animals = zooAnimals.getZooAnimals();
         double weightOfCat = Double.parseDouble(weight);
         int yobOfCat = Integer.parseInt(yob);
