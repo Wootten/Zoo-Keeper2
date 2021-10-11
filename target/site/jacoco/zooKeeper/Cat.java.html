@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cat.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">zooKeeper</a> &gt; <a href="index.source.html" class="el_package">zooKeeper</a> &gt; <span class="el_source">Cat.java</span></div><h1>Cat.java</h1><pre class="source lang-java linenums">package zooKeeper;
+//import java.time.LocalDate;
+import java.util.Calendar;
+
+public class Cat extends Mammal implements Swim {
+
+
+    private double weight;
+    private String breed;
+    private int yearOfBirth;
+    private int speed;
+
+
+<span class="fc" id="L14">    public Cat(double weight, String breed, int yearOfBirth, int speed){</span>
+<span class="fc" id="L15">        this.weight = weight;</span>
+<span class="fc" id="L16">        this.breed = breed;</span>
+<span class="fc" id="L17">        this.yearOfBirth = yearOfBirth;</span>
+<span class="fc" id="L18">        this.speed = speed;</span>
+<span class="fc" id="L19">    }</span>
+
+<span class="fc" id="L21">    public Cat(double weight, String breed, int yearOfBirth){</span>
+<span class="fc" id="L22">        this.weight = weight;</span>
+<span class="fc" id="L23">        this.breed = breed;</span>
+<span class="fc" id="L24">        this.yearOfBirth = yearOfBirth;</span>
+<span class="fc" id="L25">        this.speed = 50;</span>
+<span class="fc" id="L26">    }</span>
+
+<span class="fc" id="L28">    public Cat(double weight, String breed) {</span>
+<span class="fc" id="L29">        this.weight = weight;</span>
+<span class="fc" id="L30">        this.breed = breed;</span>
+<span class="fc" id="L31">        this.yearOfBirth = Calendar.getInstance().get(Calendar.YEAR);</span>
+<span class="fc" id="L32">        this.speed  = 50;</span>
+<span class="fc" id="L33">    }</span>
+
+<span class="fc" id="L35">    public Cat(double weight) {</span>
+<span class="fc" id="L36">        this.weight = weight;</span>
+<span class="fc" id="L37">        this.breed = &quot;Sphinx&quot;;</span>
+<span class="fc" id="L38">        this.yearOfBirth = Calendar.getInstance().get(Calendar.YEAR);</span>
+<span class="fc" id="L39">        this.speed  = 50;</span>
+<span class="fc" id="L40">    }</span>
+
+<span class="fc" id="L42">    public Cat() {</span>
+<span class="fc" id="L43">        this.weight = 10.0;</span>
+<span class="fc" id="L44">        this.breed = &quot;Sphinx&quot;;</span>
+<span class="fc" id="L45">        this.yearOfBirth = Calendar.getInstance().get(Calendar.YEAR);</span>
+<span class="fc" id="L46">        this.speed  = 50;</span>
+<span class="fc" id="L47">    }</span>
+
+
+    public double getWeight() {
+<span class="fc" id="L51">        return weight;</span>
+    }
+
+    public void setWeight(double weight) {
+<span class="fc" id="L55">        this.weight = weight;</span>
+<span class="fc" id="L56">    }</span>
+
+    public String getBreed() {
+<span class="fc" id="L59">        return breed;</span>
+    }
+
+    public void setBreed(String breed) {
+<span class="fc" id="L63">        this.breed = breed;</span>
+<span class="fc" id="L64">    }</span>
+
+    public int getYearOfBirth() {
+<span class="fc" id="L67">        return this.yearOfBirth;</span>
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+<span class="fc" id="L71">        this.yearOfBirth = yearOfBirth;</span>
+<span class="fc" id="L72">    }</span>
+
+    public int getSpeed() {
+<span class="fc" id="L75">        return speed;</span>
+    }
+
+    public void setSpeed(int speed) {
+<span class="fc" id="L79">        this.speed = speed;</span>
+<span class="fc" id="L80">    }</span>
+
+    public int getApproximateAge() {
+<span class="fc" id="L83">        int approximateAge = (Calendar.getInstance().get(Calendar.YEAR) - this.yearOfBirth);</span>
+<span class="fc" id="L84">        return approximateAge;</span>
+    }
+
+    @Override
+    public String eat() {
+<span class="fc" id="L89">        this.weight++;</span>
+<span class="fc" id="L90">        return &quot;Yummy food&quot;;</span>
+    }
+
+    @Override
+    public void gainSpeedInWater() {
+<span class="fc" id="L95">        speedCheck();</span>
+<span class="fc" id="L96">        System.out.println(&quot;I am swimming faster&quot;);</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (this.speed &lt; 70) {</span>
+<span class="fc" id="L98">            this.speed = this.speed + 10;</span>
+        } else {
+<span class="fc" id="L100">            this.speed = 70;</span>
+        }
+<span class="fc" id="L102">        speedCheck();</span>
+<span class="fc" id="L103">    }</span>
+
+    @Override
+    public void slowDownInWater() {
+<span class="fc" id="L107">        speedCheck();</span>
+<span class="fc" id="L108">        System.out.println(&quot;I am swimming slower&quot;);</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        if (this.speed &gt; 30) {</span>
+<span class="fc" id="L110">            this.speed = this.speed - 10;</span>
+        } else {
+<span class="fc" id="L112">            this.speed = 30;</span>
+        }
+<span class="fc" id="L114">        speedCheck();</span>
+<span class="fc" id="L115">    }</span>
+
+    @Override
+    public void speedCheck() {
+<span class="fc" id="L119">        int currentSpeed = getSpeed();</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">        if (currentSpeed &gt; 70) {</span>
+<span class="fc" id="L121">            this.speed = 70;</span>
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        } else if (currentSpeed &lt; 30) {</span>
+<span class="nc" id="L123">            this.speed = 30;</span>
+        }
+<span class="fc" id="L125">    }</span>
+
+    @Override
+    public String huntInWater() {
+<span class="fc" id="L129">        this.gainSpeedInWater();</span>
+<span class="fc" id="L130">        this.eat();</span>
+<span class="fc" id="L131">        this.slowDownInWater();</span>
+<span class="fc" id="L132">        return &quot;I have caught my prey!&quot;;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L137">        return &quot;{&quot; +</span>
+                &quot;\&quot;weight\&quot;= \&quot;&quot; + weight +
+                &quot;\&quot;, \&quot;breed\&quot;=\&quot;&quot; + breed +
+                &quot;\&quot;, \&quot;Year Of Birth\&quot;=\&quot;&quot; + yearOfBirth +
+                &quot;\&quot;, \&quot;Speed\&quot;=\&quot;&quot; + speed +
+                &quot;\&quot;}&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
