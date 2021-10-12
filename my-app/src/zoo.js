@@ -6,7 +6,7 @@ function Zoo(){
     const [message, setMessage] = useState([])
 
     useEffect(()=>{
-            fetch('http://localhost:8080/contents').then(res=>{
+            fetch('http://ec2-3-11-70-235.eu-west-2.compute.amazonaws.com:8080/zooCreation').then(res=>{
             return res.json()}).then(data=>{
             const newData = Object.values(data)
             setMessage(newData)
@@ -19,11 +19,10 @@ return (
         {message.map(e=>(
             <>
                 <ul>
-                <li>{e.Title}</li>
-                <li>{e.Artist}</li>
-                <li>{e.Feat}</li>
-                <li>{e.Genre}</li>
-                <li>{e.Duration}</li>
+                <li>{e.weight}</li>
+                <li>{e.breed}</li>
+                <li>{e.yearOfBirth}</li>
+                <li>{e.speed}</li>
                 </ul>
             </>
             )
@@ -32,4 +31,4 @@ return (
         );
 }
 
-export default Songs;
+export default Zoo;
