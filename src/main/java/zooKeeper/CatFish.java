@@ -6,7 +6,6 @@ public class CatFish extends Fish implements Swim {
     private int hunger;
     private int speed;
 
-
     //////////Constructors////////
 
     public CatFish(int hunger, int speed) {
