@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">zooKeeper</a> &gt; <a href="index.source.html" class="el_package">zooKeeper</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package zooKeeper;
+
+import com.google.gson.Gson;
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+//import org.springframework.web.bind.annotation.RequestParam;
+
+
+@org.springframework.boot.autoconfigure.SpringBootApplication
+@RestController
+<span class="nc" id="L17">public class Main {</span>
+<span class="nc" id="L18">    Zoo zooAnimals = new Zoo();</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L21">        SpringApplication.run(Main.class, args);</span>
+<span class="nc" id="L22">    }</span>
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/zooCreation&quot;)
+    public String myZoo() {
+<span class="nc" id="L26">        return zooAnimals.toString();</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/catFishSpeed&quot;)
+    public String catFishSpeed() {
+<span class="nc" id="L32">        CatFish catFish = new CatFish(75, 70);</span>
+<span class="nc" id="L33">        int originalSpeed = catFish.getSpeed();</span>
+<span class="nc" id="L34">        catFish.gainSpeedInWater();</span>
+<span class="nc" id="L35">        int newSpeed = catFish.getSpeed();</span>
+
+<span class="nc" id="L37">        return &quot;Original Speed: &quot; + originalSpeed + &quot; New Speed: &quot; + newSpeed;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/catTesting&quot;)
+    public String catTesting() {
+<span class="nc" id="L43">        Cat cat = new Cat(10.0, &quot;Tiger&quot;, 1996, 50);</span>
+<span class="nc" id="L44">        int dob = cat.getYearOfBirth();</span>
+<span class="nc" id="L45">        String hunt = cat.huntInWater();</span>
+<span class="nc" id="L46">        int age = cat.getApproximateAge();</span>
+
+<span class="nc" id="L48">        return &quot;Year Of Birth: &quot; + dob + &quot; ,Approximate age: &quot; + age + &quot; ,Hunting status: &quot; + hunt;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/catSelect&quot;)
+    public String catSelect() {
+<span class="nc" id="L54">        List&lt;Animal&gt; animals = zooAnimals.getZooAnimals();</span>
+        Animal selectedAnimal;
+<span class="nc" id="L56">        selectedAnimal = animals.get(0);</span>
+<span class="nc" id="L57">        String json = new Gson().toJson(selectedAnimal);</span>
+<span class="nc" id="L58">        return json;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/catFishSelect&quot;)
+    public String catFishSelect() {
+<span class="nc" id="L64">        Zoo zooAnimals = new Zoo();</span>
+<span class="nc" id="L65">        List&lt;Animal&gt; animals = zooAnimals.getZooAnimals();</span>
+        Animal selectedAnimal;
+<span class="nc" id="L67">        selectedAnimal = animals.get(1);</span>
+<span class="nc" id="L68">        String json = new Gson().toJson(selectedAnimal);</span>
+<span class="nc" id="L69">        return json;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/batSelect&quot;)
+    public String batSelect() {
+<span class="nc" id="L75">        List&lt;Animal&gt; animals = zooAnimals.getZooAnimals();</span>
+        Animal selectedAnimal;
+<span class="nc" id="L77">        selectedAnimal = animals.get(2);</span>
+<span class="nc" id="L78">        String json = new Gson().toJson(selectedAnimal);</span>
+<span class="nc" id="L79">        return json;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @GetMapping(&quot;/pigeonSelect&quot;)
+    public String pigeonSelect() {
+<span class="nc" id="L85">        List&lt;Animal&gt; animals = zooAnimals.getZooAnimals();</span>
+        Animal selectedAnimal;
+<span class="nc" id="L87">        selectedAnimal = animals.get(3);</span>
+<span class="nc" id="L88">        String json = new Gson().toJson(selectedAnimal);</span>
+<span class="nc" id="L89">        return json;</span>
+    }
+
+    @CrossOrigin(&quot;http://localhost:3000&quot;)
+    @PostMapping(&quot;/addCat&quot;)
+    public String addCat(String weight, String breed, String yob, String speed) {
+<span class="nc" id="L95">        List&lt;Animal&gt; animals = zooAnimals.getZooAnimals();</span>
+<span class="nc" id="L96">        double weightOfCat = Double.parseDouble(weight);</span>
+<span class="nc" id="L97">        int yobOfCat = Integer.parseInt(yob);</span>
+<span class="nc" id="L98">        int speedOfCat = Integer.parseInt(speed);</span>
+<span class="nc" id="L99">        Cat cat = new Cat(weightOfCat, breed, yobOfCat, speedOfCat);</span>
+<span class="nc" id="L100">        animals.add(cat);</span>
+<span class="nc" id="L101">        return cat.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

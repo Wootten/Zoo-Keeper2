@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: zooKeeperTests.AnimalTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in zooKeeperTests.AnimalTest
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in zooKeeperTests.AnimalTest
+>>>>>>> 6f54cd4adee3f19a18865b0aadb714846f83a501

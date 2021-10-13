@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+zooKeeper,zooKeeper,Fish,0,5,0,0,0,2,0,2,0,2
+zooKeeper,zooKeeper,Main,156,0,0,0,39,0,10,0,10,0
+zooKeeper,zooKeeper,Mammal,0,5,0,0,0,2,0,2,0,2
+zooKeeper,zooKeeper,Animal,0,7,0,0,0,3,0,3,0,3
+zooKeeper,zooKeeper,Bird,0,5,0,0,0,2,0,2,0,2
+zooKeeper,zooKeeper,Pigeon,0,27,0,0,0,11,0,5,0,5
+zooKeeper,zooKeeper,CatFish,3,116,1,7,1,43,1,15,0,12
+zooKeeper,zooKeeper,Zoo,58,0,0,0,10,0,3,0,3,0
+zooKeeper,zooKeeper,Bat,0,27,0,2,0,12,0,6,0,5
+zooKeeper,zooKeeper,Cat,13,193,1,7,2,69,2,22,1,19
