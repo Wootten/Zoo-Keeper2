@@ -6,6 +6,8 @@ import zooKeeper.Zoo;
 
 class ZooTest {
 
+    //None of these tests currently do anything
+
     ////////// Zoo Tests //////////
     @Test
     @DisplayName("Tests Zoo Constructor with no parameters")
